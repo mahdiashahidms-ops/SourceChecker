@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "SourceChecker",
+  "version": "1.0",
+  "description": "Extension that checks and analyzes webpages and their sources.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SourceChecker",
+    "default_icon": {
+      "16": "images/extensionIcon.png",
+      "48": "images/extensionIcon.png",
+      "128": "images/extensionIcon.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting"]
+}
