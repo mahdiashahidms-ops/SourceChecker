@@ -8,6 +8,10 @@ document.getElementById("checkSourceButton").onclick = function () {
     { active: true, currentWindow: true },
     function (tabs) {
       var tab = tabs[0];
+      var url = tab.url;
+      console.log("Current tab URL:", url);
+   //   var report = report(url, response.links);
+
       // sending message to content.js to get links for that tab
       chrome.tabs.sendMessage(
         tab.id,
@@ -18,7 +22,7 @@ document.getElementById("checkSourceButton").onclick = function () {
             return;
           }
           // displaying the links in the popup
-       //   result.textContent = JSON.stringify(response.links, null, 2);
+          result.textContent = JSON.stringify(response.links, null, 2);
         },
       );
     },
